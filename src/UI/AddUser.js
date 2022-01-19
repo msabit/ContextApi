@@ -10,7 +10,8 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Header from '../components/Header';
 import UserTextInput from '../components/UserTextInput';
 import {AppContext} from '../context/context';
-const {width, height} = Dimensions.get('window');
+// const {width, height} = Dimensions.get('window');
+import { hp, wp, fs } from "../components/CalDimension";
 const AddUser = ({navigation}) => {
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textInput: {
-    width: '75%',
+    width: wp('75%'),
     alignSelf: 'center',
     flex: 0.07,
     margin: '5%',
@@ -80,8 +81,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   AddUserButtonStyle: {
-    width: width * 0.5,
-    height: height * 0.08,
+    width: wp('50%'),
+    height: hp(7),
     alignSelf: 'center',
     margin: '5%',
     borderRadius: 10,

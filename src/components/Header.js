@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 const {width, height} = Dimensions.get('window');
+import { hp, wp, fs } from "./CalDimension";
 //chevron-back-circle-sharp
 const Header = props => {
   return (
@@ -9,9 +11,9 @@ const Header = props => {
       {props.title === 'Add New User' ? (
         <Icon
           name="chevron-back-circle-sharp"
-          size={30}
+          size={fs(35)}
           color="white"
-          style={{marginLeft: '5%',marginTop:'5%'}}
+          style={{marginLeft: wp(5),marginTop:hp(4)}}
           onPress={() => props.navigation.goBack()}
         />
       ) : null}
@@ -22,18 +24,18 @@ const Header = props => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    height: height * 0.1,
-    width: width,
+    height: hp(10),
+    width: wp('100%'),
       justifyContent: 'space-evenly',
     alignItems: 'center',
     backgroundColor: 'skyblue',
   },
   headerTitle: {
-    fontSize: 16,
+    fontSize: fs(16),
     color: '#fff',
     alignSelf:'center',
-    marginTop:'5%',
-    width:'80%',
+    marginTop:hp(4),
+    width:wp('80%'),
     textAlign:'center'
 
   },

@@ -11,17 +11,18 @@ import FloatingButton from '../components/FloatingButton';
 import Header from '../components/Header';
 import {AppContext} from '../context/context';
 const {width, height} = Dimensions.get('window');
+import { hp, wp, fs } from "../components/CalDimension";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useFocusEffect} from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 // import {useEffect} from 'react/cjs/react.production.min';
-//import CalDimension from '../components/CalDimension'
+
 
 const UserList = props => {
   const context = useContext(AppContext);
   const [user, setUser] = useState(context.users);
   const [loader, setLoader] = useState(true);
-  //const {hp,wp} = CalDimension();
+
   const removeFromContext = index => {
     // const hi={context.hy}
     //context.myFun();
@@ -31,12 +32,12 @@ const UserList = props => {
     context.users.splice(index, 1);
     //  console.log(a);
   };
-  const hp = (n)=>{
-    return (n*height)/100;
-  }
-  const wp=(n)=>{
-    return (n*width)/100;
-  }
+  // const hp = (n)=>{
+  //   return (n*height)/100;
+  // }
+  // const wp=(n)=>{
+  //   return (n*width)/100;
+  // }
   useEffect(() => {
     setLoader(false);
   }, []);
@@ -60,7 +61,7 @@ const UserList = props => {
         <Text style={styles.flatListTextStyle}>{item.city}</Text>
         <Icon
           name="delete"
-          size={30}
+          size={fs(30)}
           color="#000"
           // onPress={() => users.filter(user => user.id != 2)}
           //  onPress={() => users.filter(user => user.id != 2)}
@@ -85,7 +86,7 @@ const UserList = props => {
   if (loader) {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <ActivityIndicator size={hp(3)} color={'blue'} />
+        <ActivityIndicator size={fs(30)} color={'blue'} />
       </View>
     );
   } else
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   flatListTextStyle: {
-    fontSize: 15,
+    fontSize: fs(15),
     color: '#000',
   },
 });

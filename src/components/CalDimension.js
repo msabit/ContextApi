@@ -1,14 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import {
-  Dimensions,
-} from 'react-native';
+import {Dimensions, PixelRatio} from "react-native";
 
-const {width, height} = Dimensions.get('window');
+const {width, height} = Dimensions.get("window");
 
-const hp = (n)=>{
-  return (n*height)/100;
+const wp = (number) => {
+    let givenWidth = typeof number === "number" ? number : parseFloat(number);
+    return PixelRatio.roundToNearestPixel((width * givenWidth) / 100);
+};
+
+const hp = (number) => {
+    let givenHeight = typeof number === "number" ? number : parseFloat(number);
+    return PixelRatio.roundToNearestPixel((height * givenHeight) / 100);
+};
+
+const fs=(size, multiplier = 2)=> {
+  const scale = (width / height) * multiplier;
+
+  const newSize = size * scale;
+
+  return Math.round(PixelRatio.roundToNearestPixel(newSize));
 }
-const wp=(n)=>{
-  return (n*width)/100;
-}
- 
+export {wp, hp,fs};
