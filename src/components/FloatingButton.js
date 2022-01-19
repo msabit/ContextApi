@@ -5,7 +5,7 @@ import {Text, StyleSheet, Pressable} from 'react-native';
 const FloatingButton = ({onPressProp}) => {
   return (
     <Pressable style={styles.container} onPress={onPressProp}>
-      <Text style={{textAlign: 'center', color: '#fff', fontSize: 16}}>+</Text>
+      <Text style={{textAlign: 'center', color: '#fff', fontSize: 30, fontWeight:'bold'}}>+</Text>
     </Pressable>
   );
 };
@@ -16,9 +16,10 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#ee6e73',
+    backgroundColor: 'skyblue',
     position: 'absolute',
-    bottom: 7,
+    bottom: 20,
+
     // right: 10,
   },
 });

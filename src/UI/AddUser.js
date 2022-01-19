@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     flex: 0.07,
     margin: '5%',
     borderRadius: 3,
-    backgroundColor: '#FFFFE0',
+    backgroundColor: 'lightblue',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     margin: '5%',
     borderRadius: 10,
-    backgroundColor: '#ee6e73',
+    backgroundColor: 'skyblue',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

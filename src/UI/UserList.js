@@ -53,7 +53,7 @@ const UserList = props => {
         <Icon
           name="delete"
           size={30}
-          color="#900"
+          color="#fff"
           // onPress={() => users.filter(user => user.id != 2)}
           //  onPress={() => users.filter(user => user.id != 2)}
 
@@ -69,7 +69,7 @@ const UserList = props => {
           height: 1,
           width: '96%',
           alignSelf: 'center',
-          backgroundColor: '#000',
+          backgroundColor: '#fff',
         }}
       />
     );
@@ -87,10 +87,10 @@ const UserList = props => {
 
         <View
           style={{
-            flex: 1,
-            backgroundColor: '#FAF0E6',
+            height:height*.75,
+            backgroundColor: 'lightblue',
             marginTop: '7%',
-            marginBottom: '20%',
+            //marginBottom: '7%',
           }}>
           <FlatList
             style={{width: width * 0.9}}
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   },
   flatListTextStyle: {
     fontSize: 15,
-    color: '#000000',
+    color: '#fff',
   },
 });
 

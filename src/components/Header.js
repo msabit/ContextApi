@@ -10,8 +10,8 @@ const Header = props => {
         <Icon
           name="chevron-back-circle-sharp"
           size={30}
-          color="#900"
-          style={{marginLeft: '5%'}}
+          color="white"
+          style={{marginLeft: '5%',marginTop:'5%'}}
           onPress={() => props.navigation.goBack()}
         />
       ) : null}
@@ -24,15 +24,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: height * 0.1,
     width: width,
-      justifyContent: 'center',
+      justifyContent: 'space-evenly',
     alignItems: 'center',
-    backgroundColor: '#ee6e73',
+    backgroundColor: 'skyblue',
   },
   headerTitle: {
     fontSize: 16,
     color: '#fff',
-    marginLeft: '5%',
-    alignSelf:'center'
+    alignSelf:'center',
+    marginTop:'5%',
+    width:'80%',
+    textAlign:'center'
+
   },
 });
 

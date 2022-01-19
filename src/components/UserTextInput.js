@@ -16,6 +16,7 @@ const UserTextInput = props => {
       //    autoFocus={true}
       // caretHidden={true}
       placeholder={props.title}
+      placeholderTextColor={'#fff'}
     />
   );
 };
@@ -29,8 +30,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     fontSize: 15,
     margin: '5%',
+    color:'#fff',
     borderRadius: 3,
-    backgroundColor: '#FFFFE0',
+    backgroundColor: 'lightblue',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
