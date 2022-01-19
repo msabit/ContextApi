@@ -15,11 +15,13 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useFocusEffect} from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 // import {useEffect} from 'react/cjs/react.production.min';
+//import CalDimension from '../components/CalDimension'
+
 const UserList = props => {
   const context = useContext(AppContext);
   const [user, setUser] = useState(context.users);
   const [loader, setLoader] = useState(true);
-
+  //const {hp,wp} = CalDimension();
   const removeFromContext = index => {
     // const hi={context.hy}
     //context.myFun();
@@ -29,6 +31,12 @@ const UserList = props => {
     context.users.splice(index, 1);
     //  console.log(a);
   };
+  const hp = (n)=>{
+    return (n*height)/100;
+  }
+  const wp=(n)=>{
+    return (n*width)/100;
+  }
   useEffect(() => {
     setLoader(false);
   }, []);
@@ -44,7 +52,7 @@ const UserList = props => {
         style={{
           flexDirection: 'row',
           justifyContent: 'space-around',
-          height: height * 0.09,
+          height: hp(9),
           alignItems: 'center',
         }}>
         <Text style={styles.flatListTextStyle}>{item.name}</Text>
@@ -53,7 +61,7 @@ const UserList = props => {
         <Icon
           name="delete"
           size={30}
-          color="#fff"
+          color="#000"
           // onPress={() => users.filter(user => user.id != 2)}
           //  onPress={() => users.filter(user => user.id != 2)}
 
@@ -67,7 +75,7 @@ const UserList = props => {
       <View
         style={{
           height: 1,
-          width: '96%',
+          width: wp(96),
           alignSelf: 'center',
           backgroundColor: '#fff',
         }}
@@ -77,7 +85,7 @@ const UserList = props => {
   if (loader) {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <ActivityIndicator size={30} color={'blue'} />
+        <ActivityIndicator size={hp(3)} color={'blue'} />
       </View>
     );
   } else
@@ -87,13 +95,13 @@ const UserList = props => {
 
         <View
           style={{
-            height:height*.75,
+            height:hp(75),
             backgroundColor: 'lightblue',
-            marginTop: '7%',
+            marginTop: hp(3),
             //marginBottom: '7%',
           }}>
           <FlatList
-            style={{width: width * 0.9}}
+            style={{width: wp(90)}}
             data={context.users}
             renderItem={renderItem}
             keyExtractor={(item, index) => index}
@@ -122,7 +130,7 @@ const styles = StyleSheet.create({
   },
   flatListTextStyle: {
     fontSize: 15,
-    color: '#fff',
+    color: '#000',
   },
 });
 
